@@ -5,7 +5,6 @@
 //  Created by Şevval Mertoğlu on 28.09.2023.
 //
 
-
 import UIKit
 import Foundation
 
@@ -21,16 +20,19 @@ class MyCustomTabBarController : UITabBarController {
         btn.setBackgroundImage(UIImage(named: "ic_camera"), for: .normal)
         return btn
     }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addSomeTabItems()
         btnMiddle.frame = CGRect(x: Int(self.tabBar.bounds.width)/2 - 30, y: -20, width: 60, height: 60)
     }
+    
     override func loadView() {
         super.loadView()
         self.tabBar.addSubview(btnMiddle)
         setupCustomTabBar()
     }
+    
     func setupCustomTabBar() {
         let path : UIBezierPath = getPathForTabBar()
         let shape = CAShapeLayer()
